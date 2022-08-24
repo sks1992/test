@@ -18,9 +18,7 @@ class ExpiredVehiclesController extends GetxController {
     try {
       isLoading(true);
       var expiredVehicles = await ExpiredVehiclesService.fetchExpiredVehicle();
-      if (expiredVehicles != null) {
-        expiredVehiclesList.value = expiredVehicles;
-      }
+      expiredVehiclesList.value = expiredVehicles;
     } finally {
       isLoading(false);
     }
