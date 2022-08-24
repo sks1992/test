@@ -12,7 +12,7 @@ class ExpiredVehiclesService {
       var jsonString = response.body;
       return expiredVehiclesModelFromJson(jsonString);
     } else {
-      return null;
+      return [];
     }
   }
 }

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 class CustomCard extends StatelessWidget {
   const CustomCard(
-      {Key key,
+      {Key? key,
       this.userName,
       this.vehicleNo,
       this.vehicle,
@@ -10,11 +10,11 @@ class CustomCard extends StatelessWidget {
       this.renewalDays})
       : super(key: key);
 
-  final String userName;
-  final String vehicleNo;
-  final String vehicle;
-  final String duePayment;
-  final String renewalDays;
+  final String? userName;
+  final String? vehicleNo;
+  final String? vehicle;
+  final String? duePayment;
+  final String? renewalDays;
 
   @override
   Widget build(BuildContext context) {
@@ -30,35 +30,35 @@ class CustomCard extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   const Text("userName"),
-                  Text(userName),
+                  Text(userName!),
                 ],
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   const Text("vehicleNo"),
-                  Text(vehicleNo),
+                  Text(vehicleNo!),
                 ],
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   const Text("vehicle"),
-                  Text(vehicle),
+                  Text(vehicle!),
                 ],
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   const Text("duePayment"),
-                  Text(duePayment),
+                  Text(duePayment!),
                 ],
               ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   const Text("renewalDays"),
-                  Text(renewalDays),
+                  Text(renewalDays!),
                 ],
               ),
             ],

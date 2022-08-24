@@ -9,6 +9,83 @@ List<ExpiredVehiclesModel> expiredVehiclesModelFromJson(String str) => List<Expi
 String expiredVehiclesModelToJson(List<ExpiredVehiclesModel> data) => json.encode(List<dynamic>.from(data.map((x) => x.toJson())));
 
 class ExpiredVehiclesModel {
+  int? vid;
+  String? userName;
+  String? mobileNumber;
+  String? deviceNo;
+  String? vehicleNo;
+  String? simNo;
+  String? vehicle;
+  String? installedBy;
+  String? trackerType;
+  String? dataLimit;
+  String? speedLimit;
+  String? installedDate;
+  String? duePayment;
+  String? expiryDate;
+  String? grasePeriod;
+  String? renewalDays;
+
+  ExpiredVehiclesModel(
+      {this.vid,
+        this.userName,
+        this.mobileNumber,
+        this.deviceNo,
+        this.vehicleNo,
+        this.simNo,
+        this.vehicle,
+        this.installedBy,
+        this.trackerType,
+        this.dataLimit,
+        this.speedLimit,
+        this.installedDate,
+        this.duePayment,
+        this.expiryDate,
+        this.grasePeriod,
+        this.renewalDays});
+
+  ExpiredVehiclesModel.fromJson(Map<String, dynamic> json) {
+    vid = json['vid'];
+    userName = json['userName'];
+    mobileNumber = json['mobileNumber'];
+    deviceNo = json['deviceNo'];
+    vehicleNo = json['vehicleNo'];
+    simNo = json['simNo'];
+    vehicle = json['vehicle'];
+    installedBy = json['installedBy'];
+    trackerType = json['trackerType'];
+    dataLimit = json['dataLimit'];
+    speedLimit = json['speedLimit'];
+    installedDate = json['installedDate'];
+    duePayment = json['duePayment'];
+    expiryDate = json['expiryDate'];
+    grasePeriod = json['grasePeriod'];
+    renewalDays = json['renewalDays'];
+  }
+
+  Map<String, dynamic> toJson() {
+    final Map<String, dynamic> data = <String, dynamic>{};
+    data['vid'] = vid;
+    data['userName'] = userName;
+    data['mobileNumber'] = mobileNumber;
+    data['deviceNo'] = deviceNo;
+    data['vehicleNo'] = vehicleNo;
+    data['simNo'] = simNo;
+    data['vehicle'] = vehicle;
+    data['installedBy'] = installedBy;
+    data['trackerType'] = trackerType;
+    data['dataLimit'] = dataLimit;
+    data['speedLimit'] = speedLimit;
+    data['installedDate'] = installedDate;
+    data['duePayment'] = duePayment;
+    data['expiryDate'] = expiryDate;
+    data['grasePeriod'] = grasePeriod;
+    data['renewalDays'] = renewalDays;
+    return data;
+  }
+}
+
+/*class ExpiredVehiclesModel {
   ExpiredVehiclesModel({
     this.vid,
     this.userName,
@@ -144,4 +221,4 @@ class EnumValues<T> {
     reverseMap ??= map.map((k, v) => MapEntry(v, k));
     return reverseMap;
   }
-}
+}*/

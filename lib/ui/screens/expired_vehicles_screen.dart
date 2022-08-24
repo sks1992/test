@@ -5,7 +5,7 @@ import '../../core/controller/expired_vehicles_controller.dart';
 import '../widgets/custom_card.dart';
 
 class ExpiredVehiclesScreen extends StatelessWidget {
-  ExpiredVehiclesScreen({Key key}) : super(key: key);
+  ExpiredVehiclesScreen({Key? key}) : super(key: key);
 
   final ExpiredVehiclesController controller =
       Get.put(ExpiredVehiclesController());
