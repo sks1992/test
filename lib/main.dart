@@ -12,6 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      enableLog: true,
       title: 'Expired Vehicles App',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(

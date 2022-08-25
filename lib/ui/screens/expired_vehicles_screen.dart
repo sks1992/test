@@ -17,23 +17,24 @@ class ExpiredVehiclesScreen extends StatelessWidget {
         title: const Text("ExpiredVehicles"),
       ),
       body: Container(
-        height: Get.height,
         padding: const EdgeInsets.all(10),
         child: Obx(
-          () => ListView.builder(
-              physics: const BouncingScrollPhysics(),
-              scrollDirection: Axis.vertical,
-              itemCount: controller.expiredVehiclesList.length,
-              itemBuilder: (context, index) {
-                var data = controller.expiredVehiclesList[index];
-                return CustomCard(
-                  duePayment: data.renewalDays.toString(),
-                  renewalDays: data.duePayment.toString(),
-                  userName: data.userName.toString(),
-                  vehicle: data.vehicle.toString(),
-                  vehicleNo: data.vehicleNo.toString(),
-                );
-              }),
+          () => controller.isLoading.value == true
+              ? const Center(child: CircularProgressIndicator())
+              : ListView.builder(
+                  physics: const BouncingScrollPhysics(),
+                  scrollDirection: Axis.vertical,
+                  itemCount: controller.expiredVehiclesList.length,
+                  itemBuilder: (context, index) {
+                    var data = controller.expiredVehiclesList[index];
+                    return CustomCard(
+                      duePayment: data.renewalDays.toString(),
+                      renewalDays: data.duePayment.toString(),
+                      userName: data.userName.toString(),
+                      vehicle: data.vehicle.toString(),
+                      vehicleNo: data.vehicleNo.toString(),
+                    );
+                  }),
         ),
       ),
     );
